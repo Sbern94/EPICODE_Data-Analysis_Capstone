@@ -1,6 +1,5 @@
 # EPICODE_Data-Analysis_Capstone
 
-Read me capstone
 
 Per questo progetto di fine corso di Data Analysis tenuto da EPICODE, ho voluto realizzare un'analisi dell'offerta del mercato italiano degli immobili in vendita.
 

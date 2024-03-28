@@ -9,13 +9,12 @@ Per evitare quindi di perdere il lavoro effettuato e per evitare che il programm
 
 I dati raccolti sono i seguenti: titolo annuncio, comune, località, tipologia contratto, tipologia immobile, prezzo, numero locali, numero bagni, piano, presenza di ascensore, tipologia riscaldamento, classe energetica.
 
-
 È stato effettuato il debugging, i test e l'effettiva raccolta dei dati degli annunci contemporaneamente, ciò ha influenzato la pulizia del codice che verrà comunque successivamente pulito ed implementato.
 
 Poiché l'algoritmo lavora su un'istanza di Chrome, di cui ho disabilitato la GUI, la velocità di raccolta è di circa 1,2 annunci al secondo con un consumo di circa 1,5 GB di RAM (eseguendo lo script da terminale anziché da IDE). Per accelerare il processo ho eseguito lo script su due PC in più terminali. Ho anche eseguito un test su un'istanza EC2 gratuita di AWS che avendo però un solo GB di RAM non ha ottenuto risultati interessanti.
 Ritengo quindi che ci sia ancora un grosso margine per rendere più efficiente l'algoritmo.
 
-Una volta raccolti i 750 mila annunci sono passato alla fase di ETL utilizzando Power Query in Power BI utilizzando come connettore la directory. Una volta combinati tutti i file CSV della prima regione ho pulito e preparato i dati. È stato poi sufficiente copiare il codice M e copiarlo su una nuova Query vuota per ottenere gli stessi passaggi applicati ed avere uniformità. Dopo aver creato una Query per ogni regione le ho accodate per avere un'unica entità dei fatti per lo star scheme. Ho inoltre scaricato un db normalizzato dei comuni italiani che ho denormalizzato in Power Query per ottenere la gerarchia regione-provincia-comune con la quale applicare filtri e non solo.
+Una volta raccolti i 750 mila annunci sono passato alla fase di ETL utilizzando Power Query in Power BI utilizzando come connettore la directory. Una volta combinati tutti i file CSV della prima regione ho pulito e preparato i dati. È stato poi sufficiente copiare il codice M e copiarlo su una nuova Query vuota per ottenere gli stessi passaggi applicati ed avere uniformità. Dopo aver creato una Query per ogni regione le ho accodate per avere un'unica entità dei fatti per lo star scheme. Ho inoltre scaricato un db normalizzato dei comuni italiani (autore: Garda Informatica) che ho denormalizzato in Power Query per ottenere la gerarchia regione-provincia-comune con la quale applicare filtri e non solo.
 
 Al momento il report di Power BI consta di quattro pagine:
 1. analisi della distribuzione geografica del numero di annunci e quindi di immobili in vendita.
